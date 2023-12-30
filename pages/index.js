@@ -209,10 +209,7 @@ export default function Index() {
             align-items: center;
             justify-content: space-around;
           }
-          // .transparent {
-          //   height: ${clientH}px;
-          //   background-color: transparent;
-          // }
+
           footer {
             height: ${clientH}px;
             background-color: #606f69;
@@ -279,7 +276,7 @@ export default function Index() {
 
             position: fixed;
             bottom: 60px;
-            right: 10px;
+            right: 50px;
             cursor: pointer;
           }
           @media screen and (max-width: 1024px) {
@@ -333,11 +330,6 @@ export default function Index() {
               padding: 0 10px;
 
               color: #666666;
-
-              // top: 20px;
-              // right: 20px;
-              // width: 45px;
-              // height: 45px;
             }
             .navbar p {
               display: none;
