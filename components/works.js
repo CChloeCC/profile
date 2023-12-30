@@ -4,8 +4,8 @@ export default function Works({ clientH }) {
   return (
     <>
       <div className="works">
-        <h3>works</h3>
         <div className="box">
+          <h2>Works.</h2>{' '}
           <div className="clipBox">
             <div className="work1">
               <video
@@ -49,18 +49,29 @@ export default function Works({ clientH }) {
         .works {
           height: ${clientH}px;
           background-color: #f1f1f1;
-          justify-content: center;
+          display: flex;
+          align-items: center;
           border-bottom: 4px solid #666666;
           position: relative;
           z-index: 2;
         }
         .box {
-          height: 60%;
-          margin-top: ${clientH * 0.2}px;
-          // background-color: seagreen;
+          width:100%;
+          height: 70%;
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+        }
+        .box h2{
+          position: absolute;
+          top: 0;
+          margin:-30px;
+          left: 10%;
+          font-family: 'Belanosima', sans-serif;
+          font-size: 60px;
+          font-weight: bold;
+          color:#606f69;
         }
         .clipBox {
           position: relative;
@@ -75,6 +86,9 @@ export default function Works({ clientH }) {
           height: 900px;
           position: absolute;
           top: 0px;
+
+          display: flex;
+          flex-direction: column;
 
           transition: all 0.5s ease-out;
         }
@@ -107,7 +121,6 @@ export default function Works({ clientH }) {
           font:
             bold 16px/30px 'Belanosima',
             sans-serif;
-
 }
 
         .btnMore {
@@ -170,6 +183,8 @@ export default function Works({ clientH }) {
         }
         
         @media screen and (max-width: 576px) {
+          .works {
+            height: ${clientH - 50}px;}
           .clipBox,
           .demo1,
           .desc1 {
@@ -186,114 +201,4 @@ export default function Works({ clientH }) {
       `}</style>
     </>
   )
-
-  //   const [show, setShow] = useState('demo1')
-  //   console.log(show)
-  //   return (
-  //     <>
-  //       <div className="works">
-  //         {show === 'demo1' ? (
-  //           <div className="box">
-  //             <h4 className="title">標題</h4>
-  //             <p className="desc">
-  //               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-  //               molestiae illum neque excepturi amet voluptatum eos quibusdam
-  //               sapiente facere? Nisi voluptate magnam necessitatibus molestias
-  //               cum ex ut. Magnam, aliquam tempore?
-  //             </p>
-  //             <div className="imgBox">
-  //               <button
-  //                 onClick={() => {
-  //                   setShow('demo1')
-  //                 }}
-  //               >
-  //                 ＜
-  //               </button>
-  //               <div className="imgs">111</div>
-  //               <button
-  //                 onClick={() => {
-  //                   setShow('demo2')
-  //                 }}
-  //               >
-  //                 ＞
-  //               </button>
-  //             </div>
-  //           </div>
-  //         ) : (
-  //           <div className="box">
-  //             <h4 className="title">標題</h4>
-  //             <p className="desc">
-  //               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-  //               molestiae illum neque excepturi amet voluptatum eos quibusdam
-  //               sapiente facere? Nisi voluptate magnam necessitatibus molestias
-  //               cum ex ut. Magnam, aliquam tempore?
-  //             </p>
-  //             <div className="imgBox">
-  //               <button
-  //                 onClick={() => {
-  //                   setShow('demo1')
-  //                 }}
-  //               >
-  //                 ＜
-  //               </button>
-  //               <div className="imgs">222</div>
-  //               <button
-  //                 onClick={() => {
-  //                   setShow('demo2')
-  //                 }}
-  //               >
-  //                 ＞
-  //               </button>
-  //             </div>
-  //           </div>
-  //         )}
-  //       </div>
-  //       <style jsx>{`
-  //         .works {
-  //           height: ${clientH}px;
-  //           background-color: salmon;
-  //           display: flex;
-  //           justify-content: center;
-  //         }
-  //         .box {
-  //           height: 70%;
-  //           width: 60%;
-  //           margin: ${0.15 * clientH}px auto;
-  //           background-color: seagreen;
-  //           display: flex;
-  //           flex-direction: column;
-  //           justify-content: center;
-  //         }
-  //         .title {
-  //           background-color: sandybrown;
-  //           font-weight: bold;
-  //         }
-  //         .imgBox {
-  //           width: 100%;
-  //           height: 25%;
-  //           margin-top: 20%;
-  //           background-color: seashell;
-  //           display: flex;
-  //           justify-content: center;
-  //           align-items: center;
-  //         }
-  //         .imgBox button {
-  //           width: 2.5rem;
-  //           height: 2.5rem;
-  //           border-radius: 50px;
-  //         }
-  //         .imgBox button:first-of-type {
-  //           visibility: ${show === 'demo1' ? 'hidden' : 'visible'};
-  //         }
-  //         .imgBox button:last-of-type {
-  //           visibility: ${show === 'demo2' ? 'hidden' : 'visible'};
-  //         }
-  //         .imgs {
-  //           width: 60%;
-  //           background-color: sandybrown;
-  //           height: 90%;
-  //         }
-  //       `}</style>
-  //     </>
-  //   )
 }

@@ -20,59 +20,6 @@ export default function Index() {
 
     const handleScroll = () => {
       setWindowHeight(window.scrollY)
-      //scrollY > window ; scrollTop > element(DOM)
-
-      // const scrollY = window.scrollY
-      // setView(
-      //   scrollY >= 0 && scrollY < clientH
-      //     ? 'frontPage'
-      //     : scrollY > clientH && scrollY < clientH * 2
-      //     ? 'aboutPage'
-      //     : scrollY > clientH * 2 && scrollY < clientH * 3
-      //     ? 'worksPage'
-      //     : scrollY > clientH * 3 - 10
-      //     ? 'footer'
-      //     : '',
-      // )
-
-      //   if (view === 'frontPage' && window.scrollY > windowheight) {
-      //     console.log('1')
-      //     window.scrollTo({
-      //       top: clientH,
-      //     })
-      //   }
-      //   if (view === 'aboutPage' && window.scrollY < windowheight) {
-      //     console.log(
-      //       '3',
-      //       `windowheight:${windowheight}`,
-      //       `scrollY:${window.scrollY}`,
-      //     )
-      //     window.scrollTo({
-      //       top: 0,
-      //     })
-      //   }
-      //   if (view === 'aboutPage' && window.scrollY > windowheight) {
-      //     console.log('2')
-      //     window.scrollTo({
-      //       top: clientH * 2,
-      //     })
-      //   }
-      //   if (view === 'worksPage' && window.scrollY < windowheight) {
-      //     console.log(
-      //       '4',
-      //       `scrollY:${window.scrollY}`,
-      //       `windowheight:${windowheight}`,
-      //     )
-      //     window.scrollTo({
-      //       top: clientH,
-      //     })
-      //   }
-      //   if (view === 'footer' && window.scrollY < windowheight) {
-      //     console.log('5')
-      //     window.scrollTo({
-      //       top: clientH * 2,
-      //     })
-      //   }
     }
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
@@ -85,7 +32,12 @@ export default function Index() {
   }, [clientH, view, windowheight]) // 空的依賴陣列確保只有在組件掛載和卸載時才會設定和解除事件監聽,不然每一次進來會多一個監聽器
   return (
     <>
-      <div className="home" style={{ height: ` ${clientH}px` }}>
+      <div
+        className="home"
+        style={{
+          height: `${clientH}px`,
+        }}
+      >
         <section className="container">
           <div
             className={
@@ -107,7 +59,10 @@ export default function Index() {
             </button>
             <button
               onClick={() => {
-                window?.scrollTo(0, clientH)
+                window?.scrollTo(
+                  0,
+                  window?.innerWidth > 576 ? clientH : clientH - 50,
+                )
               }}
             >
               About
@@ -115,14 +70,20 @@ export default function Index() {
 
             <button
               onClick={() => {
-                window?.scrollTo(0, clientH * 2)
+                window?.scrollTo(
+                  0,
+                  window?.innerWidth > 576 ? clientH * 2 : clientH * 2 - 100,
+                )
               }}
             >
               Works
             </button>
             <button
               onClick={() => {
-                window?.scrollTo(0, clientH * 3)
+                window?.scrollTo(
+                  0,
+                  window?.innerWidth > 576 ? clientH * 3 : clientH * 3 - 150,
+                )
               }}
             >
               Contact
@@ -164,13 +125,6 @@ export default function Index() {
       </footer>
       <style jsx>
         {`
-          // .front {
-          //   width: 100%;
-          //   position: absolute;
-          //   height: ${clientH * 3}px;
-          //   background-color: transparent;
-          //   z-index: 20;
-          // }
           .container {
             padding-top: 120px;
             position: relative;
@@ -194,8 +148,10 @@ export default function Index() {
             line-height: 1;
             font-family: 'Belanosima', sans-serif;
             margin-top: 180px;
+            font-weight: bold;
           }
           .name span {
+            font-weight: normal;
             padding-left: 140px;
             font-size: 72px;
           }
@@ -217,7 +173,6 @@ export default function Index() {
 
             overflow: hidden;
             position: fixed;
-            // z-index: 10;
             right: 50px;
             top: 50px;
             transition: all 0.4s ease-out;
@@ -254,10 +209,10 @@ export default function Index() {
             align-items: center;
             justify-content: space-around;
           }
-          .transparent {
-            height: ${clientH}px;
-            background-color: transparent;
-          }
+          // .transparent {
+          //   height: ${clientH}px;
+          //   background-color: transparent;
+          // }
           footer {
             height: ${clientH}px;
             background-color: #606f69;
@@ -282,6 +237,7 @@ export default function Index() {
             position: relative;
             border-radius: 20px;
             padding: 60px;
+            word-wrap: break-word;
           }
 
           footer img {
@@ -322,8 +278,8 @@ export default function Index() {
             font-size: 50px;
 
             position: fixed;
-            bottom: 20px;
-            right: 25px;
+            bottom: 60px;
+            right: 10px;
             cursor: pointer;
           }
           @media screen and (max-width: 1024px) {
@@ -362,25 +318,53 @@ export default function Index() {
             }
           }
           @media screen and (max-width: 576px) {
+            .home {
+              height: ${clientH - 50}px !important;
+            }
             .navbar {
-              top: 20px;
-              right: 20px;
-              width: 45px;
-              height: 45px;
+              width: 100%;
+              height: 50px;
+              position: fixed;
+              bottom: 0;
+              top: auto;
+              right: auto;
+              left: 0;
+              background-color: #f1f1f1;
+              padding: 0 10px;
+
+              color: #666666;
+
+              // top: 20px;
+              // right: 20px;
+              // width: 45px;
+              // height: 45px;
             }
             .navbar p {
-              height: 45px;
-              width: 45px;
-              font-size: 28px;
+              display: none;
+
+              // height: 45px;
+              // width: 45px;
+              // font-size: 28px;
             }
             .navbar:hover,
             .navbarTop {
-              top: 20px;
-              right: 20px;
-              width: 200px;
-              height: 280px;
-              display: flex;
-              flex-direction: column;
+              // top: 20px;
+              // right: 20px;
+              // width: 200px;
+              // height: 280px;
+              // display: flex;
+              // flex-direction: column;
+
+              width: 100%;
+              height: 50px;
+              position: fixed;
+              bottom: 0;
+              top: auto;
+              right: auto;
+              left: 0;
+              background-color: #f1f1f1;
+              padding: 0 10px;
+              color: #666666;
             }
 
             .name {

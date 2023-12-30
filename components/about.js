@@ -93,20 +93,21 @@ export default function About({ clientH }) {
           background-color: #c7bcae;
           position: relative;
           z-index: 2;
+          display: flex;
+          align-items: center;
         }
         .about p {
           font-size: 18px;
-          line-height: 35px;
+          line-height: 30px;
           font-weight: bold;
           color: #666666;
         }
         .about span {
-          font-size: 24px;
+          font-size: 22px;
           color: #f1f1f1;
         }
         .about span:first-of-type {
           font-size: 40px;
-          // color: #d0946e;
         }
         .about span:nth-of-type(2) {
           background-image: linear-gradient(
@@ -117,10 +118,10 @@ export default function About({ clientH }) {
           );
         }
         .container {
-          height: 100%;
+          height: 90%;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-around;
         }
         .box {
           display: grid;
@@ -229,6 +230,9 @@ export default function About({ clientH }) {
         }
 
         @media screen and (max-width: 1024px) {
+          .container {
+            height: auto;
+          }
           .content {
             width: 45%;
             margin: 2%;
@@ -252,6 +256,9 @@ export default function About({ clientH }) {
           }
         }
         @media screen and (max-width: 576px) {
+          .about {
+            height: ${clientH - 50}px;
+          }
           .content {
             width: 80%;
             height: 100px;
