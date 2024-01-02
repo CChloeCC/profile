@@ -163,11 +163,11 @@ export default function Index() {
             width: 100%;
           }
           .navbar {
-            // box-shadow: 7px 8px 11px 0px rgba(239, 238, 235, 0.6) inset;
-            // filter: drop-shadow(4px 4px 5.1px rgba(0, 0, 0, 0.25));
+            box-shadow: 7px 8px 11px 0px rgba(239, 238, 235, 0.6) inset;
+            filter: drop-shadow(4px 4px 5.1px rgba(0, 0, 0, 0.25));
 
-            // background-color: #c7bcae;
-            // border-radius: 40px;
+            background-color: #c7bcae;
+            border-radius: 40px;
             width: 65px;
             height: 65px;
 
