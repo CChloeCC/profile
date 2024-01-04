@@ -1,5 +1,6 @@
 import About from '@/components/about'
 import Works from '@/components/works'
+import LittleProjects from '@/components/little-projects'
 import { useState, useEffect } from 'react'
 
 export default function Index() {
@@ -82,7 +83,7 @@ export default function Index() {
               onClick={() => {
                 window?.scrollTo(
                   0,
-                  window?.innerWidth > 576 ? clientH * 3 : clientH * 3 - 150,
+                  window?.innerWidth > 576 ? clientH * 4 : clientH * 4 - 200,
                 )
               }}
             >
@@ -100,6 +101,7 @@ export default function Index() {
       </div>
       <About clientH={clientH} />
       <Works clientH={clientH} />
+      <LittleProjects clientH={clientH} />
 
       <footer>
         <button
@@ -163,11 +165,11 @@ export default function Index() {
             width: 100%;
           }
           .navbar {
-            box-shadow: 7px 8px 11px 0px rgba(239, 238, 235, 0.6) inset;
-            filter: drop-shadow(4px 4px 5.1px rgba(0, 0, 0, 0.25));
+            // box-shadow: 7px 8px 11px 0px rgba(239, 238, 235, 0.6) inset;
+            // filter: drop-shadow(4px 4px 5.1px rgba(0, 0, 0, 0.25));
 
-            background-color: #c7bcae;
-            border-radius: 40px;
+            // background-color: #c7bcae;
+            // border-radius: 40px;
             width: 65px;
             height: 65px;
 
@@ -182,14 +184,14 @@ export default function Index() {
             width: 65px;
             font-size: 30px;
             font-weight: bold;
-            color: ${windowheight >= clientH * 3 ? '#f1f1f1' : '#666666'};
+            color: ${windowheight >= clientH * 4 ? '#f1f1f1' : '#666666'};
             margin: 0px;
             display: flex;
             align-items: center;
             justify-content: center;
           }
           .navbar button {
-            color: ${windowheight >= clientH * 3 ? '#f1f1f1' : '#666666'};
+            color: ${windowheight >= clientH * 4 ? '#f1f1f1' : '#666666'};
             font-size: 22px;
             font-family: Belanosima, sans-serif;
             text-decoration: none;
@@ -372,13 +374,21 @@ export default function Index() {
                 sans-serif;
             }
             footer .box {
-              width: 80%;
+              width: 90%;
+              padding: 20px;
             }
             footer h1 {
               left: 10px;
               bottom: -26px;
 
               font-size: 36px;
+            }
+            footer div {
+              font-weight: 600;
+              font-size: 18px;
+            }
+            .up {
+              right: 10px;
             }
           }
         `}

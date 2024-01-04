@@ -51,9 +51,21 @@ export default function Works({ clientH }) {
           background-color: #f1f1f1;
           display: flex;
           align-items: center;
-          border-bottom: 4px solid #666666;
           position: relative;
           z-index: 2;
+          
+        }
+        .works::after{
+          content: "";
+          position:absolute;
+          bottom:15px;
+          right:-5px;
+          width:85%;
+         height:18px;
+         filter: drop-shadow(-3px 5px 3px rgba(0, 0, 0, 0.25));
+         border-radius:3px 0 0 3px;
+          background-color: #c7bcae;
+          // border-bottom: #c7bcae 12px outset ;
         }
         .box {
           width:100%;
@@ -65,7 +77,7 @@ export default function Works({ clientH }) {
         }
         .box h2{
           position: absolute;
-          top: 0;
+          top: -8%;
           margin:-30px;
           left: 10%;
           font-family: 'Belanosima', sans-serif;
@@ -75,7 +87,7 @@ export default function Works({ clientH }) {
         }
         .clipBox {
           position: relative;
-          height: 450px;
+          height: 400px;
           width: 100%;
           overflow: hidden;
           display: flex;
@@ -83,7 +95,7 @@ export default function Works({ clientH }) {
           justify-content: center;
         }
         .work1 {
-          height: 900px;
+          height: 800px;
           position: absolute;
           top: 0px;
 
@@ -93,17 +105,17 @@ export default function Works({ clientH }) {
           transition: all 0.5s ease-out;
         }
         .work1:hover {
-          top: -451px;
+          top: -401px;
         }
         .demo1 {
-          height: 450px;
+          height: 400px;
           transition: all 0.5s ease-out;
         }
         .demo1:hover {
           opacity: 0;
         }
         .desc1 {
-          height: 450px;
+          height: 400px;
           width: 100%;
           font-family: 'Belanosima', sans-serif;
           position: relative;
@@ -167,21 +179,6 @@ export default function Works({ clientH }) {
         }
 
 
-        @media screen and (max-width: 992px) {
-          .clipBox,
-          .demo1,
-          .desc1 {
-            height: 400px;
-          }
-
-          .work1 {
-            height: 800px;
-          }
-          .work1:hover {
-            top: -401px;
-          
-        }
-        
         @media screen and (max-width: 576px) {
           .works {
             height: ${clientH - 50}px;}
@@ -190,7 +187,15 @@ export default function Works({ clientH }) {
           .desc1 {
             height: 250px;
           }
+          .box h2{
+            font-size: 50px;
+            top: 0;  top: 0;
+          }
 
+          .desc1 h3{
+            position: static;
+            padding:10px 0 0 20px;
+          }
           .work1 {
             height: 500px;
           }

@@ -52,7 +52,11 @@ export default function About({ clientH }) {
               }
               ref={content1Ref}
             >
-              {Array(3).fill(<div className="circle"></div>)}輔仁大學/2012
+              {/* .fill()對陣列的每個條目使用相同的<span> */}
+              {Array.from({ length: 3 }, (v, i) => (
+                <div className="circle" key={i}></div>
+              ))}
+              輔仁大學/2012
               <p>中國文學與應用學系</p>
             </div>
             <div
@@ -61,7 +65,9 @@ export default function About({ clientH }) {
               }
               ref={content2Ref}
             >
-              {Array(3).fill(<div className="circle"></div>)}
+              {Array.from({ length: 3 }, (v, i) => (
+                <div className="circle" key={i}></div>
+              ))}
               高地植髮/2015
               <p>毛囊分離師</p>
             </div>
@@ -71,7 +77,9 @@ export default function About({ clientH }) {
               }
               ref={content3Ref}
             >
-              {Array(3).fill(<div className="circle"></div>)}
+              {Array.from({ length: 3 }, (v, i) => (
+                <div className="circle" key={i}></div>
+              ))}
               資展國際 (原資策會)/2023
               <p>前端工程師就業養成班</p>
             </div>
