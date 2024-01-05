@@ -236,7 +236,7 @@ export default function LittleProjects({ clientH }) {
           margin-top:20px;
           width: 40px;
           height: 40px;
-          background-color: #c7bcae;
+          background-color: #transparent;
           text-align: center;
           line-height: 40px;
           border-radius: 50px;
@@ -278,11 +278,13 @@ export default function LittleProjects({ clientH }) {
         }
         .pic{
           height:350px;
+          transition:all 0.8s ease-in;
         }
         .pic img{
           width: 100%;
           height: 100%;
           object-fit: contain;
+          transition:all 0.8s ease-in;
         }
         .desc {
           height: 350px;

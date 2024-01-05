@@ -7,6 +7,7 @@ export default function Index() {
   const [windowheight, setWindowHeight] = useState(0)
 
   const [clientH, setclientH] = useState(960)
+  // console.log(clientH)
 
   const [view, setView] = useState('frontPage')
 
@@ -138,7 +139,7 @@ export default function Index() {
             background-image: url(background.jpg);
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: left 5% bottom;
+            background-position: left 5% bottom 3%;
             width: 100%;
             transition: all 0.3s ease-in;
             position: relative;
@@ -165,13 +166,8 @@ export default function Index() {
             width: 100%;
           }
           .navbar {
-            // box-shadow: 7px 8px 11px 0px rgba(239, 238, 235, 0.6) inset;
-            // filter: drop-shadow(4px 4px 5.1px rgba(0, 0, 0, 0.25));
-
-            // background-color: #c7bcae;
-            // border-radius: 40px;
             width: 65px;
-            height: 65px;
+            height: 50px;
 
             overflow: hidden;
             position: fixed;
@@ -181,16 +177,16 @@ export default function Index() {
           }
           .navbar p {
             height: 100%;
-            width: 65px;
+            width: 50px;
             font-size: 30px;
             font-weight: bold;
             color: ${windowheight >= clientH * 4 ? '#f1f1f1' : '#666666'};
             margin: 0px;
             display: flex;
             align-items: center;
-            justify-content: center;
           }
           .navbar button {
+            height: 33px;
             color: ${windowheight >= clientH * 4 ? '#f1f1f1' : '#666666'};
             font-size: 22px;
             font-family: Belanosima, sans-serif;
@@ -198,18 +194,19 @@ export default function Index() {
             border: none;
             background-color: transparent;
           }
+          .navbar button:hover {
+            border-bottom: 3px solid #666666;
+          }
 
           .navbar:hover,
           .navbarTop {
             width: 450px;
-            height: 65px;
-            border-radius: 40px;
+            height: 50px;
             position: fixed;
             right: 50px;
             top: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
           }
 
           footer {
@@ -342,13 +339,6 @@ export default function Index() {
             }
             .navbar:hover,
             .navbarTop {
-              // top: 20px;
-              // right: 20px;
-              // width: 200px;
-              // height: 280px;
-              // display: flex;
-              // flex-direction: column;
-
               width: 100%;
               height: 50px;
               position: fixed;
